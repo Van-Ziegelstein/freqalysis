@@ -7,6 +7,7 @@ module Gramification (
 
 
 import qualified Data.List as L
+import Text.Printf (printf)
 import qualified Control.Applicative as A
 import qualified Control.Monad.Writer as W
 import qualified Data.ByteString.Char8 as B
@@ -22,7 +23,10 @@ instance Ord TokenFreq where
 statLog :: B.ByteString -> [TokenFreq] -> W.Writer B.ByteString [TokenFreq]
 statLog id ta = W.writer (ta, "\nMost frequent " <> id <> "\n" <> tokLines ta)
     where
-        tokLines = B.unlines . L.map (\(TokenFreq s freq) -> s <> ": " <> (B.pack $ show freq)) . take 6
+        prettyTok = B.dropSpace . B.concatMap (\c -> if c > '\32' && c < '\127' 
+            then B.pack [ ' ', c ] 
+            else B.pack $ printf " 0x%02x" c)
+        tokLines = B.unlines . L.map (\(TokenFreq s freq) -> prettyTok s <> ": " <> (B.pack $ show freq)) . take 6
 
 
 aboveAvg :: [TokenFreq] -> [TokenFreq]

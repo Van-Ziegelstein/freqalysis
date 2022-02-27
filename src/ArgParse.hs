@@ -51,5 +51,5 @@ setOptions argv = case getOpt Permute options argv of
                         (_, _, errs) -> die (concat errs ++ usageInfo header options)
                         
                         where
-                            header = "Usage: freqalysis [ -c|--charset %u|%l|%n|%h|%a ] <pathToFile>"
+                            header = "Usage: freqalysis [ -c|--charset %u|%l|%n|%h|%p|%a ] <pathToFile>"
                             printHelp = putStrLn (usageInfo header options) >> exitSuccess
