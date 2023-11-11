@@ -1,13 +1,13 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.33.0.
+-- This file has been generated from package.yaml by hpack version 0.36.0.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: e7363ef2e2b233761faa4629b207be680315d1f8b20e059bdb795aae09adee13
+-- hash: 547c45ad4f9928074db81cbcc9a8af4feed29ccddbe7745a73eb7e5fa380f4ac
 
 name:           freqalysis
-version:        0.1.0.0
+version:        0.1.1.0
 description:    Please see the README on GitHub at <https://github.com/Van-Ziegelstein/freqalysis#readme>
 homepage:       https://github.com/Van-Ziegelstein/freqalysis#readme
 bug-reports:    https://github.com/Van-Ziegelstein/freqalysis/issues
