@@ -9,11 +9,11 @@ it will search for the most frequent:
 * [Trigrams](https://en.wikipedia.org/wiki/Trigram)
 
 ## Character Sets
-By default, the script will check the printable
-ASCII range from 32 - 126 against the ciphertext. The character set
-can be narrowed with the `-c` option:
+The character set can be tailored with the `-c` option. By default, all
+possible Byte values (0 - 255) are used:
 
-* `%l`: lowercase letters
-* `%u`: uppercase letters
-* `%n`: alphanumeric characters
+* `%a` (default): Entire numeric range of a Byte
+* `%l`: lowercase letters (ASCII)
+* `%u`: uppercase letters (ASCII)
+* `%n`: alphanumeric characters (ASCII)
 * `%h`: hex characters (0 - F)
